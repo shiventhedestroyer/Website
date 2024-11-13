@@ -1,18 +1,10 @@
 // JavaScript code to handle dropdown filtering and navigation
-const validRoles = ['reviewer', 'partner', 'family', 'admin'];
+const validRoles = ['reviewer', 'partner', 'family', 'admin', 'weather man'];
 
 // Show all options when input is focused
 function showOptions() {
     const dropdown = document.getElementById('dropdownOptions');
-    const options = dropdown.getElementsByTagName('div');
-
-    // Show all options
     dropdown.classList.add('show');
-    for (let option of options) {
-        option.style.display = 'block';
-    }
-
-    // Hide error message if it's displayed
     document.getElementById('errorMessage').style.display = 'none';
 }
 
@@ -22,16 +14,14 @@ function filterOptions() {
     const dropdown = document.getElementById('dropdownOptions');
     const options = dropdown.getElementsByTagName('div');
 
-    // Show all options if input is empty
     if (input.trim() === '') {
         dropdown.classList.add('show');
         for (let option of options) {
-            option.style.display = 'block'; // Ensure all options are visible
+            option.style.display = 'block';
         }
         return;
     }
 
-    // Filter each option based on input
     let hasMatches = false;
     for (let option of options) {
         if (option.textContent.toLowerCase().includes(input)) {
@@ -42,7 +32,6 @@ function filterOptions() {
         }
     }
 
-    // Hide dropdown if no matches
     if (!hasMatches) {
         dropdown.classList.remove('show');
     }
@@ -58,7 +47,11 @@ function selectRole(role) {
 function navigateToPage() {
     const role = document.getElementById('roleInput').value.toLowerCase();
     if (validRoles.includes(role)) {
-        window.location.href = role + '.html';
+        if (role === 'weather man') {
+            window.location.href = 'weather.html';
+        } else {
+            window.location.href = role + '.html';
+        }
     } else {
         document.getElementById('errorMessage').style.display = 'block';
     }
