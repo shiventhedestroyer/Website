@@ -1,50 +1,128 @@
-﻿/* Basic reset to remove default margin and padding */
-* {
+﻿/* Body styling to enable sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background-color: #f3e5f5; /* Light purple background */
+    font-family: Arial, sans-serif;
+    color: #4a148c; /* Dark purple for text */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+/* Header styling to position closer to top */
+h1 {
+    margin-top: 40px;
+    font-size: 2em;
+    color: #4a148c; /* Dark purple */
+    text-align: center;
+    margin-bottom: 20px; /* Space between heading and main content */
+}
+
+/* Center the main content container */
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    justify-content: flex-start; /* Align items closer to the top */
+    width: 100%;
+    margin-top: 10px; /* Small gap between the heading and input */
+    flex-grow: 1; /* Allows main content to take up available space */
+}
+
+/* Dropdown container with text field and button */
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    position: relative;
     text-align: center;
 }
 
-header {
-    margin-bottom: 20px;
+/* Input field styling */
+#roleInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #8e24aa; /* Medium purple border */
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f3e5f5;
+    color: #4a148c; /* Dark purple text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333;
-}
-
-main p {
-    margin: 20px 0;
-    font-size: 1.1em;
-    color: #555;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
+/* Select role button next to input */
+.navigate-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #8e24aa; /* Medium purple background */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0 8px 8px 0;
     cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-    button:hover {
-        background-color: #0056b3;
+    .navigate-btn:hover {
+        background-color: #7b1fa2; /* Darker purple on hover */
     }
 
-footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #888;
+/* Dropdown options styling */
+.dropdown-options {
+    display: none; /* Ensure dropdown is initially hidden */
+    position: absolute;
+    top: 105%; /* Position dropdown just below the input */
+    left: 0;
+    width: 100%;
+    background-color: #e1bee7; /* Light purple background for dropdown */
+    border: 1px solid #8e24aa;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+    /* Show dropdown options with animation */
+    .dropdown-options.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-options div {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #4a148c; /* Dark purple text */
+        transition: background-color 0.2s ease;
+    }
+
+        .dropdown-options div:hover {
+            background-color: #d1c4e9; /* Light purple on hover */
+        }
+
+/* Error message styling */
+.error-message {
+    color: #d32f2f; /* Red for error */
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+/* Footer styling for bottom placement */
+.site-footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4a148c; /* Dark purple background */
+    color: #ffffff; /* White text color */
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
 }

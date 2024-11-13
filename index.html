@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Aditi is sily goose</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to the CSS file -->
+    <title>Main Page</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome Aditi you pretty girl</h1>
-    </header>
-    <main>
-        <p>This is Shiven's First Site'.</p>
-        <button id="greetButton">Aditi click here</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Website</p>
+
+    <h1>Welcome to the Main Page</h1>
+
+    <div class="main-content">
+        <div class="dropdown-container">
+            <input type="text" id="roleInput" placeholder="Select or type a role" onfocus="showOptions()" oninput="filterOptions()">
+            <button class="navigate-btn" onclick="navigateToPage()">Go</button>
+            <div class="dropdown-options" id="dropdownOptions">
+                <div onclick="selectRole('Reviewer')">Reviewer</div>
+                <div onclick="selectRole('Partner')">Partner</div>
+                <div onclick="selectRole('Family')">Family</div>
+                <div onclick="selectRole('Admin')">Admin</div>
+            </div>
+        </div>
+        <div class="error-message" id="errorMessage">Error: Page does not exist.</div>
+    </div>
+
+    <footer class="site-footer">
+        &copy; Shiven Website 2024 v2.0
     </footer>
 
-    <script src="js/script.js"></script> <!-- Link to the JavaScript file -->
+    <script src="js/script.js"></script>
 </body>
 </html>
