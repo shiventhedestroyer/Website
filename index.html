@@ -3,32 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>User Authentication</title>
+    <!-- Link to your main CSS file -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Optional: Add basic styles for error/success messages */
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#signup">Sign Up</a></li>
+                <li><a href="#login">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Welcome to the Main Page</h1>
+    <main>
+        <!-- Sign-Up Form -->
+        <section id="signup">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <input type="email" id="signup-email" placeholder="Email" required />
+                <input type="password" id="signup-password" placeholder="Password" required />
+                <button type="submit">Sign Up</button>
+            </form>
+            <!-- Success/Error message for sign-up -->
+            <div id="signup-message" class="message" style="display: none;"></div>
+        </section>
 
-    <div class="main-content">
-        <div class="dropdown-container">
-            <input type="text" id="roleInput" placeholder="Select or type a role" onfocus="showOptions()" oninput="filterOptions()">
-            <button class="navigate-btn" onclick="navigateToPage()">Go</button>
-            <div class="dropdown-options" id="dropdownOptions">
-                <div onclick="selectRole('Reviewer')">Reviewer</div>
-                <div onclick="selectRole('Partner')">Partner</div>
-                <div onclick="selectRole('Family')">Family</div>
-                <div onclick="selectRole('Admin')">Admin</div>
-                <div onclick="selectRole('Weather Man')">Weather Man</div>
-            </div>
-        </div>
-        <div class="error-message" id="errorMessage">Error: Page does not exist.</div>
-    </div>
+        <!-- Login Form -->
+        <section id="login">
+            <h2>Log In</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required />
+                <input type="password" id="login-password" placeholder="Password" required />
+                <button type="submit">Log In</button>
+            </form>
+            <!-- Success/Error message for login -->
+            <div id="login-message" class="message" style="display: none;"></div>
+        </section>
+    </main>
 
-    <footer class="site-footer">
-        &copy; Shiven Website 2024 v2.0
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Link to JavaScript files -->
+    <script type="module" src="js/signup.js"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
 </html>
