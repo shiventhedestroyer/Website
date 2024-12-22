@@ -4,6 +4,7 @@
   "description": "First repository to learn how to make a website using visual studio 2022",
   "main": "index.js",
   "scripts": {
+    "start": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "firebase": "^11.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.5"
   }
 }
